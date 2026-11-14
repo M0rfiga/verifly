@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/css/variables.css">
+    <link rel="stylesheet" href="../static/css/pages/dasboard.css">
+    <link rel="stylesheet" href="../static/css/components/menu.css">
+
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+
+    <title>Verifly - Dashboard</title>
+    <link rel="stylesheet" href="../static/css/components/top_menu.css">
+</head>
+
+<body>
+    <div id="app-container">
+
+        <div id="left-menu">
+            <button id="close-left-menu"><img src="../static/images/x-button.png"></button>
+            <img src="../static/images/logo_verifly_bg_blue.jpg" class="main-logo">
+            <nav>
+                <a href="dashboard.html" class="active"><img src="../static/images/dashboard.png">Dashboard</a>
+                <a href="new_reserve.html"><img src="../static/images/nova-reserva.png">Nova Reserva</a>
+                <a href="history.html"><img src="../static/images/historico.png">Histórico</a>
+            </nav>
+        </div>
+
+        {% include "_top_menu.html" %}
+
+        <main id="page-content">
+
+            <div class="cards-area">
+
+                <a href="#" data-filter="high_priority">
+                    <div class="card high-priority-card">
+                        <div class="card-header">
+                            <span>AÇÃO NECESSÁRIA — ALTA PRIORIDADE</span>
+                            <img src="../static/images/warning.png">
+                        </div>
+                        <div class="card-value" data-count="high_priority">0</div>
+                        <div class="card-footer">Embarque em até 60 dias</div>
+                    </div>
+                </a>
+
+                <a href="#" data-filter="low_priority">
+                    <div class="card low-priority-card">
+                        <div class="card-header">
+                            <span>ALTERAÇÕES — BAIXA PRIORIDADE</span>
+                            <img src="../static/images/clock.png">
+                        </div>
+                        <div class="card-value" data-count="low_priority">0</div>
+                        <div class="card-footer">Embarque em mais de 60 dias</div>
+                    </div>
+                </a>
+
+                <a href="#" data-filter="confirmed">
+                    <div class="card confirmed-flights-card">
+                        <div class="card-header">
+                            <span>VOOS CONFIRMADOS</span>
+                            <img src="../static/images/marker.png">
+                        </div>
+                        <div class="card-value" data-count="confirmed">0</div>
+                        <div class="card-footer">Sem alteração de horário</div>
+                    </div>
+                </a>
+
+                <a href="#" data-filter="solved">
+                    <div class="card solved-flights-card">
+                        <div class="card-header">
+                            <span>VOOS RESOLVIDOS</span>
+                            <img src="../static/images/shield.png">
+                        </div>
+                        <div class="card-value" data-count="solved">0</div>
+                        <div class="card-footer">Reacomodação Concluída</div>
+                    </div>
+                </a>
+
+                <a href="#" data-filter="completed">
+                    <div class="card completed-flights-card">
+                        <div class="card-header">
+                            <span>VOOS REALIZADOS</span>
+                            <img src="../static/images/plane.png">
+                        </div>
+                        <div class="card-value" data-count="completed">0</div>
+                        <div class="card-footer">Embarque já ocorrido</div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="monitoring-panel">
+                <div class="panel-top">
+                    <h3>Painel Geral de Monitoramento</h3>
+                    <div class="panel-filters" id="panel-filters">
+                        <button type="button" class="filter-chip active" data-chip="">Todas</button>
+                        <button type="button" class="filter-chip" data-chip="high_priority">Alta prioridade</button>
+                        <button type="button" class="filter-chip" data-chip="low_priority">Baixa prioridade</button>
+                        <button type="button" class="filter-chip" data-chip="confirmed">Confirmados</button>
+                        <button type="button" class="filter-chip" data-chip="solved">Resolvidos</button>
+                        <button type="button" class="filter-chip" data-chip="completed">Realizados</button>
+                    </div>
+                    <button type="button" class="btn-check-all" id="btn-check-all">Verificar voos agora</button>
+                </div>
+
+                <table class="monitoring-table">
+                    <thead>
+                        <tr>
+                            <th>ALERTA</th>
+                            <th>CLIENTE</th>
+                            <th>CIA AÉREA</th>
+                            <th>TRECHO</th>
+                            <th>DATA ORIGINAL</th>
+                            <th>ATUALIZAÇÃO / STATUS</th>
+                            <th>AÇÕES</th>
+                        </tr>
+                    </thead>
+                    <tbody id="monitoring-body">
+                        <tr>
+                            <td colspan="7" class="empty-row">Carregando reservas...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../static/scripts/top_menu.js"></script>
+    <script src="../static/scripts/dashboard.js"></script>
+    <script src="../static/scripts/open-close-LeftMenu.js"></script>
+</body>
+
+</html>

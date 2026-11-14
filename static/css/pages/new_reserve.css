@@ -1,0 +1,261 @@
+#page-content {
+
+    #new-reserve-form {
+        width: 100%;
+        max-width: 80%;
+        margin: 40px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-family: "Barlow", Arial, sans-serif;
+    }
+
+    .form-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 24px 24px 28px;
+        box-shadow: 0 2px 6px rgba(16, 27, 47, .1);
+    }
+
+    .section-title {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 700;
+        color: #0b1b2e;
+        text-transform: uppercase;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+
+        label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4d667f;
+            text-transform: uppercase;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 36px;
+            padding: 0 12px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 12px;
+            color: #1e293b;
+            outline: none;
+            transition: border-color 0.2s ease;
+
+            &::placeholder {
+                color: #a0aec0;
+            }
+
+            &:focus {
+                border-color: #107ACF;
+            }
+        }
+    }
+
+    #identification-container {
+
+        .identification-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 20px;
+            margin-top: 20px;
+
+            .form-group input {
+                height: 42px;
+                background: #f8f9fb;
+            }
+
+            .folder-group {
+                max-width: 120px;
+            }
+        }
+    }
+
+    #itinerary-container {
+
+        .itinerary-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .btn-add-segment {
+            background: #eef2f6;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-family: inherit;
+            font-size: 10px;
+            font-weight: 600;
+            color: #1e293b;
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: #dde4ec;
+            }
+        }
+
+        #segments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .segment {
+            background: #e9eff5;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .segment-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .segment-tag {
+                background: #bcd4ee;
+                color: #0b4a85;
+                font-size: 9px;
+                font-weight: 700;
+                padding: 4px 8px;
+                border-radius: 4px;
+            }
+
+            .btn-remove-segment {
+                background: transparent;
+                border: none;
+                font-size: 20px;
+                line-height: 1;
+                color: #718096;
+                cursor: pointer;
+
+                &:hover {
+                    color: #E53E3E;
+                }
+            }
+
+            .segment-row {
+                display: grid;
+                gap: 14px;
+            }
+
+            .segment-row-flight {
+                grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+            }
+
+            .segment-row-airline {
+                grid-template-columns: 1.6fr 1.6fr;
+            }
+        }
+    }
+
+    .form-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        small {
+            font-size: 9px;
+            color: var(--text-muted, #64748b);
+        }
+
+        .btn-register {
+            background: #0a5cb0;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 14px;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: #084a8f;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1950px) {
+    #page-content {
+        .form-card {
+            min-width: 100%;
+
+            .section-title {
+                font-size: 1rem;
+            }
+
+            .identification-grid {
+                label {
+                    font-size: 1.2rem;
+                }
+
+                input {
+                    height: 60px !important;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .itinerary-top {
+            .btn-add-segment {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        #segments-list {
+            .segment {
+                .segment-top {
+                    span {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .segment-row-flight {
+                    margin-bottom: 50px;
+                }
+
+                label {
+                    font-size: 1.2rem;
+                }
+
+                select {
+                    font-size: 1rem;
+                }
+
+                input {
+                    height: 60px !important;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .form-actions {
+            button {
+                font-size: 1.3rem !important;
+            }
+
+            small {
+                font-size: 1rem;
+            }
+        }
+    }
+}

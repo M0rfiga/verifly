@@ -1,0 +1,31 @@
+<div id="top-menu">
+    <p>VERIFLY - SISTEMA DE MONITORAMENTO DE VOOS</p>
+    {% if menu_show_search|default(true) %}
+    <div class="navbar-search">
+        <input type="search" id="{{ menu_search_id|default('menu-search') }}" data-menu-search placeholder="Pesquisar cliente ou reserva..." aria-label="Pesquisar cliente, reserva ou pasta" aria-controls="menu-search-results" aria-expanded="false" aria-autocomplete="list" role="combobox" autocomplete="off">
+        <img src="../static/images/lupa.png" alt="" aria-hidden="true">
+        <div id="menu-search-results" class="menu-panel search-results" role="listbox" aria-label="Resultados de pesquisa" hidden></div>
+    </div>
+    {% endif %}
+    <div class="navbar-actions">
+        <button id="open-left-menu"><img src="../static/images/hamburguer.png"></button>
+        <p id="menu-user" class="menu-user">Usuário: …</p>
+        <button type="button" id="menu-notifications" aria-label="Notificações" aria-expanded="false" aria-controls="menu-notification-panel">
+            <img src="../static/images/notification.png" alt="">
+            <span id="notification-count" hidden>0</span>
+        </button>
+        <button type="button" id="menu-logout" aria-label="Sair e voltar ao login" title="Sair">
+            <img src="../static/images/sair.png" alt="">
+        </button>
+    </div>
+    <section id="menu-notification-panel" class="menu-panel notifications-panel" aria-labelledby="notification-heading" hidden>
+        <header>
+            <h2 id="notification-heading">Notificações</h2>
+            <button type="button" id="notifications-read-all">Marcar como lidas</button>
+        </header>
+        <p class="notification-description">Últimas 50 movimentações e alertas de reservas.</p>
+        <div id="notification-list" aria-live="polite"></div>
+        <p id="notification-feedback" role="status"></p>
+    </section>
+    <p id="menu-feedback" role="status" hidden></p>
+</div>
